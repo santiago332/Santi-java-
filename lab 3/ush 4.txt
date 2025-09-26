@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class DoubleCompare {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Shkruaj tarifaTeorike: ");
+        double tarifaTeorike = scanner.nextDouble();
+
+        System.out.print("Shkruaj tarifaLlogaritur: ");
+        double tarifaLlogaritur = scanner.nextDouble();
+
+        final double EPS = 0.0001;
+
+        boolean baraziESakte = tarifaTeorike == tarifaLlogaritur;
+
+        boolean baraziEPërafrt = Math.abs(tarifaTeorike - tarifaLlogaritur) < EPS;
+
+        System.out.println("Barazi e sakte (==): " + baraziESakte);
+        System.out.println("Barazi e perafert (epsilon): " + baraziEPërafrt);
+
+        System.out.println("Pse?");
+        System.out.println("- Barazia e sakt (==) nuk funksionon mir me double për shkak te gabimeve te vogla ne perfaqesimin binar.");
+        System.out.println("- Barazia e përafërt me EPS eshte me e besueshme kur punojme me numra me presje dhjetore.");
+    }
+}
+\

@@ -1,0 +1,38 @@
+public class MonthlyFare {
+    public static void main(String[] args) {
+        System.out.println("=== Testimi 1: Pa Nxenes ===");
+        llogaritTarifen(22, 100.0, false, 12);
+
+        System.out.println();
+
+        System.out.println("=== Testimi 2: Me Nxenes ===");
+        llogaritTarifen(20, 80.0, true, 15);
+    }
+
+    public static void llogaritTarifen(int ditePune, double cmimDitor, boolean eshteNxenes, int distanceKm) {
+        double tarifaBaze = ditePune * cmimDitor;
+        System.out.println("Tarifa baz: " + tarifaBaze);
+
+        double pasZbritjes = tarifaBaze;
+        if (eshteNxenes) {
+            pasZbritjes = tarifaBaze * 0.9; 
+        }
+        System.out.println("Pas zbritjes nxenesi (nese aplikohet): " + pasZbritjes);
+
+        double pasShteses = pasZbritjes;
+        if (distanceKm > 10) {
+            pasShteses = pasZbritjes * 1.05; 
+        }
+        System.out.println("Pas shteses distance (" + distanceKm + " km): " + pasShteses);
+
+        double pasKuponit = pasShteses;
+        if (ditePune >= 22 && !eshteNxenes) {
+            pasKuponit -= 200;
+            if (pasKuponit < 0) pasKuponit = 0;
+        }
+        System.out.println("Pas kuponit besnikeri: " + Math.round(pasKuponit));
+
+        long total = Math.round(pasKuponit);
+        System.out.println("Totali (lek): " + total);
+    }
+}

@@ -1,0 +1,22 @@
+public class PrecedenceDemo {
+    public static void main(String[] args) {
+        int r1 = 10 + 2 * 5 - 6 / 3;
+     
+        int r2 = ((10 + 2) * (5 - 6)) / 3;
+     
+        int x = 3;
+        int y = x++ + ++x;
+      
+        int a = 5;
+        int b = 2;
+        double d1 = a / b;        
+        double d2 = 5 / 2.0;     
+
+        System.out.println("r1 (10 + 2 * 5 - 6 / 3) = " + r1);
+        System.out.println("r2 (((10 + 2) * (5 - 6)) / 3) = " + r2);
+        System.out.println("x pas shprehjes x++ + ++x = " + x);
+        System.out.println("y (x++ + ++x) = " + y);
+        System.out.println("5 / 2 (int) = " + d1);
+        System.out.println("5 / 2.0 (double) = " + d2);
+    }
+}

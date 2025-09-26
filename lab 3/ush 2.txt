@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class CompareLogicDemo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        System.out.print("Shkruaj moshen: ");
+        int mosha = scanner.nextInt();
+
+        System.out.print("A je nxenes? (true/false): ");
+        boolean eshteNxenes = scanner.nextBoolean();
+
+        boolean zbritjaLejohet = eshteNxenes;
+        boolean zbritjeShtese2Lek = eshteNxenes && mosha < 12;
+
+        System.out.println("Zbritja lejohet: " + zbritjaLejohet);
+        System.out.println("Zbritje shtes 2 lek: " + zbritjeShtese2Lek);
+
+    }
+}

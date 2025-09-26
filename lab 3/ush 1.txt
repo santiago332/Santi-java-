@@ -1,0 +1,38 @@
+public class OperatorWarmup {
+    public static void main(String[] args) {
+        int a = 17;
+       int b = 5;
+        int c = 2;
+
+        System.out.println("a + b = " + (a + b));
+        System.out.println("a - b = " + (a - b));
+        System.out.println("a * b = " + (a * b));
+        System.out.println("a / b = " + (a / b)); 
+        System.out.println("a % b = " + (a % b)); 
+
+      
+        System.out.println("\nPara-increment dhe post-increment:");
+        System.out.println("Vlera fillestare e b: " + b);
+
+        int r = b++ * c;
+        System.out.println("Pas shprehjes r = b++ * c;");
+        System.out.println("r = " + r); 
+        System.out.println("b (pas b++) = " + b); 
+
+   
+        b = 5;
+
+        int r2 = ++b * c;
+        System.out.println("\nPas shprehjes r2 = ++b * c;");
+        System.out.println("r2 = " + r2); 
+        System.out.println("b (pas ++b) = " + b); 
+
+        System.out.println("\nDemonstrim i --:");
+        System.out.println("b para b--: " + b); 
+        int r3 = b-- + 1;
+        System.out.println("r3 = b-- + 1 = " + r3); 
+        System.out.println("b pas b--: " + b); 
+
+        System.out.println("\nCheckpoint 1 i perfunduar.");
+    }
+}
