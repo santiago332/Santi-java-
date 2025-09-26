@@ -1,0 +1,50 @@
+public class Main {
+    public static void main(String[] args) {
+
+    
+        int numriInt = 1000;
+        long numriLong = numriInt; 
+        System.out.println("Implicit Casting (int -> long):");
+        System.out.println("int: " + numriInt + " -> long: " + numriLong + "\n");
+
+        float numriFloat = 12.34f;
+        double numriDouble = numriFloat; 
+        System.out.println("Implicit Casting (float -> double):");
+        System.out.println("float: " + numriFloat + " -> double: " + numriDouble + "\n");
+
+      
+        double pi = 3.14159;
+        int piInt = (int) pi; 
+    
+        System.out.println("Explicit Casting (double -> int):");
+        System.out.println("double: " + pi + " -> int: " + piInt);
+        System.out.println("// Humbje precizioni: pjesa decimale (0.14159) humbet\n");
+
+        long gjatesia = 15000000000L;
+        int gjatesiaInt = (int) gjatesia; 
+        System.out.println("Explicit Casting (long -> int):");
+        System.out.println("long: " + gjatesia + " -> int: " + gjatesiaInt);
+        System.out.println("// Overflow: vlera e tejkalon kapacitetin e int\n");
+
+        double vlereDouble = 123456.7891011;
+        float vlereFloat = (float) vlereDouble; 
+        System.out.println("Explicit Casting (double -> float):");
+        System.out.println("double: " + vlereDouble + " -> float: " + vlereFloat);
+        System.out.println("// Humbje precizioni: float ka më pak saktësi se double\n");
+
+
+        byte b = 127; 
+        byte bOverflow = (byte)(b + 1); 
+        System.out.println("Overflow Example (byte b = 127; (byte)(b + 1)):");
+        System.out.println("Original byte: " + b + " -> After adding 1: " + bOverflow);
+        System.out.println("// Overflow: 127 + 1 = -128 (rikthehet në fillim)\n");
+
+
+        short s = 32767; 
+        
+        short sOverflow = (short)(s + 1);
+        System.out.println("Overflow Example (short s = 32767; (short)(s + 1)):");
+        System.out.println("Original short: " + s + " -> After adding 1: " + sOverflow);
+        System.out.println("// Overflow: 32767 + 1 = -32768\n");
+    }
+}

@@ -1,0 +1,8 @@
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello Word\n");
+        System.out.println("Pershendetje, Santi\n");
+        System.out.print("Sot eshte: 2025-09-24 09:12\n");
+        System.out.print("Miremengjes dhe mireseerdhe ne Java!");
+    }
+}

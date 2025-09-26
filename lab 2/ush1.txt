@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        byte mosha  = 17;
+        int popullsia = 742000;
+        long borxhi = 1200000000L;
+        float temp = 23.5f;
+        double koeficenti = 0.33333333;
+        char shkronja = 'S';
+        boolean student = true;
+
+        System.out.println("mosha: " + mosha);
+        System.out.println("popullsia: " + popullsia);
+        System.out.println("borxhi: " + borxhi);
+        System.out.println("temp: " + temp);
+        System.out.println("koeficenti: " + koeficenti);
+        System.out.println("shkronja: " + shkronja);
+        System.out.println("student: " + student);
+    }
+}

@@ -1,0 +1,74 @@
+import java.util.Scanner;
+
+public class ProgramiFatura {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+  
+        System.out.println("====== MENU ======");
+        System.out.println("1) Uj - 60 Lek");
+        System.out.println("2) Leng - 120 Lek");
+        System.out.println("3) Çokollat - 150 Lek");
+        System.out.println("4) Patatina - 100 Lek");
+        System.out.print("Zgjidh 1-4: ");
+        int zgjedhja = input.nextInt();
+
+        int cmimiProdukti = 0;
+        String produkti = "";
+
+
+        switch (zgjedhja) {
+            case 1:
+                produkti = "Uj";
+                cmimiProdukti = 60;
+                break;
+            case 2:
+                produkti = "Leng";
+                cmimiProdukti = 120;
+                break;
+            case 3:
+                produkti = "Çokollat";
+                cmimiProdukti = 150;
+                break;
+            case 4:
+                produkti = "Patatina";
+                cmimiProdukti = 100;
+                break;
+            default:
+                System.out.println("e pavleshme");
+        }
+
+        System.out.print("Jep sasine ");
+        int sasia = input.nextInt();
+
+        if (sasia <= 0) {
+            System.out.println("Sasia duhet te jete me e madhe se 0");
+        }
+
+        System.out.print("Ke kart klienti? (po/jo): ");
+        input.nextLine();
+        String kaKarte = input.nextLine().toLowerCase();
+
+
+        int subtotal = cmimiProdukti * sasia;
+        double zbritja = 0;
+
+
+        if (kaKarte.equals("po")) {
+            zbritja = 0.10 * subtotal;
+        }
+
+        double total = subtotal - zbritja;
+
+
+        System.out.println("\n===== Fatura =====");
+        System.out.println("Produkti: " + produkti);
+        System.out.println("Cmimi/1: " + cmimiProdukti + " Lek");
+        System.out.println("Sasia: " + sasia);
+        System.out.println("Subtotal: " + subtotal + " Lek");
+        System.out.println("Zbritje (" + (int)(zbritja / subtotal * 100) + "%): -" + (int)zbritja + " Lek");
+        System.out.println("TOTALI: " + total + " Lek");
+        System.out.println("==================");
+    }
+}
