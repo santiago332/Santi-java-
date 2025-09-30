@@ -1,0 +1,28 @@
+public class PrePostWarmup {
+    public static void main(String[] args) {
+        int x = 5;  // x fillon me 5
+
+        System.out.println(x++); 
+        // Post-increment: printon vlerën aktuale (5), pastaj rritet x -> x bëhet 6
+
+        System.out.println(++x); 
+        // Pre-increment: rrit x nga 6 në 7 dhe pastaj printon 7 -> x = 7
+
+        System.out.println(x--); 
+        // Post-decrement: printon vlerën aktuale (7), pastaj ulet x -> x bëhet 6
+
+        System.out.println(--x); 
+        // Pre-decrement: ul x nga 6 në 5 dhe pastaj printon 5 -> x = 5
+
+        // Shprehja e vetme
+        int y = x++ + ++x;
+        /*
+          Hapi 1: x++ -> përdoret 5, pastaj x bëhet 6
+          Hapi 2: ++x -> rrit x në 7 dhe përdoret 7
+          Pra: y = 5 + 7 = 12
+          Në fund: x = 7
+        */
+
+        System.out.println("x final = " + x + ", y = " + y);
+    }
+}

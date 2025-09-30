@@ -1,0 +1,39 @@
+public class TicketCounter {
+    public static void main(String[] args) {
+        // Input
+        int biletaFillestare = 100;
+        int shitje1 = 35;
+        int shitje2 = 28;
+        boolean bonusDitor = true;
+
+        int stok = biletaFillestare;
+        int totalShitura = 0;
+        int cmim = 40;
+
+        System.out.println("Stok fillestar: " + stok);
+
+        stok -= shitje1;
+        totalShitura += shitje1;
+        System.out.println("Shitje paradite: " + shitje1 + " → stok: " + stok);
+
+        stok -= shitje2;
+        totalShitura += shitje2;
+        System.out.println("Shitje pasdite: " + shitje2 + " → stok: " + stok);
+
+        System.out.println("Totali i biletave të shitura: " + totalShitura);
+
+        double teArdhura = totalShitura * cmim;
+        System.out.println("Të ardhurat bruto: " + teArdhura);
+
+        if (bonusDitor) {
+            double bonus = teArdhura * 0.05;
+            teArdhura += bonus;
+            System.out.println("Bonus 5% i aplikuar: " + bonus);
+        }
+
+        System.out.println("\nTë ardhurat neto: " + teArdhura);
+
+        int lek = (int) Math.round(teArdhura);
+        System.out.println("Raporto (lek, i rrumbullakuar): " + lek);
+    }
+}
