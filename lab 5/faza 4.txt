@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class MixedReads {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Shkruaj adresen: ");
+        String adresa = scanner.nextLine();
+
+        System.out.print("Kodi postar: ");
+        int kodiPostar = scanner.nextInt();
+
+        System.out.print("Pesha (kg): ");
+        double peshaKg = scanner.nextDouble();
+
+        scanner.nextLine(); 
+
+        System.out.printf("Adresa: %s\n", adresa);
+        System.out.printf("Kodi postar: %d\n", kodiPostar);
+        System.out.printf("Pesha (kg): %.2f\n", peshaKg);
+    }
+}

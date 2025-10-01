@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class InputValidation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Çmimi baze (lek): ");
+        if (!scanner.hasNextInt()) {
+            System.out.println("Gabim: Nuk eshte numër i vlefshem.");
+            return;
+        }
+        int base = scanner.nextInt();
+        if (base <= 0) {
+            System.out.println("Gabim: Çmimi baze duhet te jete me i madh se 0.");
+            return;
+        }
+
+        System.out.print("A je nxenes? (true/false): ");
+        boolean isStudent;
+        if (scanner.hasNextBoolean()) {
+            isStudent = scanner.nextBoolean();
+        } else {
+            String input = scanner.next();
+            if (input.equalsIgnoreCase("true")) {
+                isStudent = true;
+            } else if (input.equalsIgnoreCase("false")) {
+                isStudent = false;
+            } else {
+                System.out.println("Gabim: Vlera per nxenes duhet te jete 'true' ose 'false'.");
+                return;
+            }
+        }
+
+        System.out.println("→ Lexim OK: base=" + base + ", isStudent=" + isStudent);
+    }
+}
