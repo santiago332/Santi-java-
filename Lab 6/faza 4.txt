@@ -1,0 +1,38 @@
+public class DiscountRules {
+    public static void main(String[] args) {
+        int mosha = 17;
+        boolean eshteNxenes = false;
+        double cmimiBaze = 100;
+
+        processDiscount(mosha, eshteNxenes, cmimiBaze);
+    }
+
+    public static void processDiscount(int mosha, boolean eshteNxenes, double cmimiBaze) {
+        if (mosha <= 0 || cmimiBaze <= 0) {
+            System.out.println("Input i pavlefshem");
+            return;
+        }
+
+        String llojiZbritjes = "0%";
+        double totali = cmimiBaze;
+
+        if (mosha < 6) {
+            llojiZbritjes = "FALAS";
+            totali = 0;
+        } else if (mosha <= 18 || eshteNxenes) {
+            llojiZbritjes = "30%";
+            totali = cmimiBaze * 0.7;
+        } else if (mosha >= 65) {
+            llojiZbritjes = "20%";
+            totali = cmimiBaze * 0.8;
+        } else {
+            llojiZbritjes = "0%";
+            totali = cmimiBaze;
+        }
+
+        int totaliRrumbullakosur = (int) Math.round(totali);
+
+        System.out.println("Zbritje: " + llojiZbritjes);
+        System.out.println("Totali (lek): " + totaliRrumbullakosur);
+    }
+}

@@ -1,0 +1,53 @@
+public class ScholarshipEligibility {
+    public static void main(String[] args) {
+        double mesatarja1 = 9.6;
+        boolean kaCertifikateOlimpiade1 = false;
+        int teArdhuratFamiljare1 = 60000;
+        System.out.println("Shembulli 1:");
+        kontrolloBurse(mesatarja1, kaCertifikateOlimpiade1, teArdhuratFamiljare1);
+        System.out.println();
+
+        double mesatarja2 = 7.0;
+        boolean kaCertifikateOlimpiade2 = false;
+        int teArdhuratFamiljare2 = 40000;
+        System.out.println("Shembulli 2:");
+        kontrolloBurse(mesatarja2, kaCertifikateOlimpiade2, teArdhuratFamiljare2);
+    }
+
+    public static void kontrolloBurse(double mesatarja, boolean kaCertifikateOlimpiade, int teArdhuratFamiljare) {
+        if (mesatarja < 0.0 || mesatarja > 10.0 || teArdhuratFamiljare <= 0) {
+            System.out.println("Të dhëna të pavlefshme");
+            return;
+        }
+
+        if (mesatarja >= 9.5 || kaCertifikateOlimpiade) {
+            System.out.println("Bursë e plotë");
+            System.out.print("Arsye: ");
+            if (mesatarja >= 9.5 && kaCertifikateOlimpiade) {
+                System.out.println("mesatarja ≥ 9.5 dhe ka certifikatë olimpiade.");
+            } else if (mesatarja >= 9.5) {
+                System.out.println("mesatarja ≥ 9.5.");
+            } else {
+                System.out.println("ka certifikatë olimpiade.");
+            }
+        } else if (mesatarja >= 8.5 && teArdhuratFamiljare < 50000) {
+            System.out.println("Bursë e pjesshme");
+            System.out.println("Arsye: mesatarja ≥ 8.5 dhe të ardhurat < 50000.");
+        } else {
+            System.out.println("Nuk kualifikohet");
+            System.out.print("Arsye: ");
+            if (mesatarja < 8.5) {
+                System.out.print("mesatarja < 8.5");
+                if (teArdhuratFamiljare >= 50000) {
+                    System.out.println(" dhe të ardhurat ≥ 50000.");
+                } else {
+                    System.out.println(".");
+                }
+            } else if (teArdhuratFamiljare >= 50000) {
+                System.out.println("të ardhurat ≥ 50000.");
+            } else {
+                System.out.println("kushtet nuk plotësohen.");
+            }
+        }
+    }
+}

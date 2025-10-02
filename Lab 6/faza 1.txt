@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class IfElseBasic {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Shkruaj nese je nxenes (true/false): ");
+        boolean eshteNxenes = scanner.nextBoolean();
+
+        System.out.println("Status: nxenes = " + eshteNxenes);
+
+        if (eshteNxenes) {
+            System.out.println("Zbritje nxenesi: PO");
+        } else {
+            System.out.println("Zbritje nxenesi: JO");
+        }
+    }
+}
