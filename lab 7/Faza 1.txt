@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class SwitchWarmup {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Shkruaj një numer (1–7): ");
+        int dita = input.nextInt();
+
+        switch (dita) {
+            case 1:
+                System.out.println("E Hene");
+                break;
+            case 2:
+                System.out.println("E Marte");
+                break;
+            case 3:
+                System.out.println("E Merkure");
+                break;
+            case 4:
+                System.out.println("E Enjte");
+                break;
+            case 5:
+                System.out.println("E Premte");
+                break;
+            case 6:
+                System.out.println("E Shtun");
+                break;
+            case 7:
+                System.out.println("E Diel");
+                break;
+            default:
+                System.out.println("Zgjedhje gabuar.");
+        }
+
+    }
+}

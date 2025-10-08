@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class UrbanMenu {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Menu:");
+        System.out.println("1) Bilete 40 lek");
+        System.out.println("2) Student -30%");
+        System.out.println("3) Senior 65+ -20%");
+        System.out.println("4) Info orari");
+        System.out.println("5) Dalje");
+
+        System.out.print("Zgjedhja: ");
+        int zgjedhja = in.nextInt();
+
+        switch (zgjedhja) {
+            case 1:
+            case 2:
+            case 3:
+                System.out.print("Sasia: ");
+                int sasia = in.nextInt();
+                if (sasia <= 0) {
+                    System.out.println("Sasia duhet të jete > 0.");
+                    break;
+                }
+
+                double cmimi = 40;
+                String lloji = "Bilete e zakonshme";
+
+                switch (zgjedhja) {
+                    case 2:
+                        cmimi *= 0.7; // -30%
+                        lloji = "Bilete studentore (-30%)";
+                        break;
+                    case 3:
+                        cmimi *= 0.8; // -20%
+                        lloji = "Bilete për seniore (-20%)";
+                        break;
+                    default:
+                        lloji = "Biletë e zakonshme";
+                }
+
+                double total = cmimi * sasia;
+                System.out.println(lloji);
+                System.out.println("Totali (lek): " + (int) total);
+                break;
+
+            case 4:
+                System.out.println("Info orari: Autobuset nisen çdo 15 minuta nga qendra.");
+                break;
+
+            case 5:
+                System.out.println("Dalje nga programi...");
+                break;
+
+            default:
+                System.out.println("Zgjedhje e pavlefshme.");
+        }
+
+    }
+}
